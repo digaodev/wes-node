@@ -4,7 +4,7 @@ const promisify = require('es6-promisify');
 const User = mongoose.model('User');
 
 exports.loginForm = (req, res) => {
-  res.render('login');
+  res.render('login', { title: 'Login' });
 };
 
 exports.validateRegister = (req, res, next) => {
@@ -44,7 +44,7 @@ exports.validateRegister = (req, res, next) => {
 };
 
 exports.registerForm = (req, res) => {
-  res.render('register');
+  res.render('register', { title: 'Register' });
 };
 
 exports.register = async (req, res, next) => {

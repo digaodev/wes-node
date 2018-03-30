@@ -18,7 +18,7 @@ const multerOptions = {
 const Store = mongoose.model('Store');
 
 exports.homePage = (req, res) => {
-  res.render('index');
+  res.render('index', { title: 'Home' });
 };
 
 exports.addStore = (req, res) => {
@@ -91,5 +91,5 @@ exports.getStoresByTag = async (req, res, next) => {
 
   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
 
-  res.render('tag', { tags, stores, tag });
+  res.render('tag', { title: 'Tags', tags, stores, tag });
 };
